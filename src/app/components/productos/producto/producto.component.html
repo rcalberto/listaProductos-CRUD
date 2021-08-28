@@ -1,0 +1,47 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #productoForm="ngForm" (ngSubmit)="onSubmit(productoForm)">
+      <input
+        *ngIf="productoServicio.estadoServicio !== 'Agregar'"
+        type="text"
+        name="$key"
+        #$key="ngModel"
+        [(ngModel)]="productoServicio.seleccionarProducto.$key"
+      />
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="productoServicio.seleccionarProducto.name"
+        placeholder="Nombre"
+      />
+      <input
+        type="text"
+        class="form-control"
+        name="categoria"
+        #categoria="ngModel"
+        [(ngModel)]="productoServicio.seleccionarProducto.categoria"
+        placeholder="Categoria"
+      />
+      <input
+        type="number"
+        class="form-control"
+        name="precio"
+        #precio="ngModel"
+        [(ngModel)]="productoServicio.seleccionarProducto.precio"
+        placeholder="Precio"
+      />
+      <button class="btn btn-primary" type="submit">
+        {{ productoServicio.estadoServicio }}
+      </button>
+      <button
+        class="btn btn-secondary"
+        type="reset"
+        (click)="resetForm(productoForm)"
+      >
+        Reset
+      </button>
+    </form>
+  </div>
+</div>

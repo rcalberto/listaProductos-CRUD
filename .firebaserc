@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularcrud-ae774": {
+      "hosting": {
+        "crudTareas": [
+          "angularcrud-ae774"
+        ]
+      }
+    }
+  }
+}
